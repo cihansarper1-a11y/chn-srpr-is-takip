@@ -22,9 +22,12 @@ input,select,textarea{width:100%;background:#ffffff;border:1px solid var(--borde
 .bottom{position:fixed;bottom:0;left:0;right:0;background:rgba(247,250,255,.98);border-top:1px solid var(--border);padding:8px 10px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);z-index:10}.nav{background:none;border:0;color:var(--muted);padding:8px 2px;font-size:11px}.nav.active{color:var(--blue);font-weight:800}.nav b{display:block;font-size:20px;margin-bottom:2px;color:inherit}.nav{color:#53657b;min-height:56px}
 .fab{position:fixed;right:max(18px,calc((100vw - 760px)/2 + 18px));bottom:calc(92px + env(safe-area-inset-bottom));width:58px;height:58px;border-radius:50%;border:0;background:var(--blue);color:#fff;font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px #425b7830;z-index:15;overflow:visible;touch-action:manipulation}
 .modal{position:fixed;inset:0;background:#0009;display:none;align-items:flex-end;z-index:20}.modal.show{display:flex}.sheet{width:100%;max-width:760px;margin:auto;background:#ffffff;border:1px solid var(--border);border-radius:22px 22px 0 0;padding:18px;max-height:92vh;overflow:auto}
-.toast{position:fixed;left:50%;bottom:calc(160px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#ffffff;border:1px solid var(--border);padding:10px 14px;border-radius:12px;display:none;z-index:30}.toast.show{display:block}
+.summary-sheet{max-width:560px;border-radius:22px 22px 0 0}.summary-content{background:#f5f8fc;border:1px solid var(--border);border-radius:16px;padding:18px;margin-top:14px}.summary-line{display:grid;grid-template-columns:minmax(105px,34%) minmax(0,1fr);align-items:start;gap:12px;margin:0;padding:12px 0;border-bottom:1px solid var(--border)}.summary-line:first-child{padding-top:0}.summary-line:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}.summary-line .summary-label{display:block;font-size:13px;line-height:1.5;color:var(--muted);font-weight:650;margin:0}.summary-line .summary-value{font-size:15px;line-height:1.5;font-weight:750;overflow-wrap:anywhere;word-break:break-word;color:var(--text)}.summary-pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.summary-pair{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px;align-items:start;padding:11px 0;border-bottom:1px solid var(--border);min-width:0}.summary-pair .summary-label,.summary-note .summary-label{font-size:12px;line-height:1.5;color:var(--muted);font-weight:750;white-space:nowrap}.summary-pair .summary-value,.summary-note .summary-value{font-size:14px;line-height:1.5;font-weight:750;overflow-wrap:anywhere;word-break:break-word;min-width:0}.summary-note{padding-top:13px}.summary-note .summary-value{margin-top:7px;min-height:35px}@media(max-width:420px){.summary-pair-grid{grid-template-columns:1fr}.summary-pair{grid-template-columns:130px minmax(0,1fr)}}.task[role=button]{cursor:pointer}.task[role=button]:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+@media print{body *{visibility:hidden!important}#summaryPrint,#summaryPrint *{visibility:visible!important}#summaryPrint{display:block!important;position:absolute;left:0;top:0;width:100%;padding:28px;background:white;color:#172235;font-family:Arial,sans-serif}#summaryPrint h1{font-size:22px;margin:0 0 22px}#summaryPrint .pdfgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:34px;row-gap:0}#summaryPrint .pdfrow{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px;align-items:start;padding:13px 0;border-bottom:1px solid #d8dee8;min-width:0}#summaryPrint .pdfrow.full{grid-column:1/-1}#summaryPrint .pdf-label{font-size:12px;color:#172235;font-weight:700;white-space:nowrap}#summaryPrint .pdf-label:after{content:' :'}#summaryPrint .pdf-value{font-size:13px;font-weight:600;overflow-wrap:anywhere;word-break:break-word;min-width:0}#summaryPrint .pdfrow.full .pdf-value{min-height:48px}}.toast{position:fixed;left:50%;bottom:calc(160px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#ffffff;border:1px solid var(--border);padding:10px 14px;border-radius:12px;display:none;z-index:30}.toast.show{display:block}
 .home-alerts{display:grid;gap:9px;margin:8px 0 18px}.alert-card{border-radius:14px;padding:12px 14px;border:1px solid}.alert-card.overdue{background:rgba(255,91,110,.11);border-color:rgba(255,91,110,.48)}.alert-card.upcoming{background:rgba(245,185,66,.10);border-color:rgba(245,185,66,.45)}.alert-heading{font-size:14px;font-weight:800;display:flex;align-items:center;gap:8px;margin-bottom:7px}.alert-item{font-size:12px;line-height:1.5;padding:6px 0;border-top:1px solid rgba(142,162,187,.2)}.alert-item strong{display:block;font-size:13px}.alert-item span{color:var(--muted)}.alert-empty{font-size:12px;color:var(--muted)}
-@media(max-width:699px){.bottom{padding-left:8px;padding-right:8px;background:#fff}.nav{font-size:12px;color:#53657b}.nav.active{color:#1769b7;background:#eaf3ff;border-radius:12px}.nav b{font-size:20px;color:inherit}.app{padding-bottom:calc(120px + env(safe-area-inset-bottom))}}\n@media(min-width:700px){.bottom{left:50%;right:auto;width:760px;transform:translateX(-50%);border-radius:18px 18px 0 0}.fab{right:calc(50% - 340px)}}
+@media(max-width:420px){.summary-sheet{padding:14px}.summary-content{padding:13px}.summary-line{grid-template-columns:minmax(92px,38%) minmax(0,1fr);gap:9px}.summary-line .summary-label{font-size:12px}.summary-line .summary-value{font-size:14px}}
+@media(max-width:699px){.bottom{background:#fff;padding-left:8px;padding-right:8px}.nav{font-size:12px;color:#53657b}.nav.active{color:#1769b7;background:#eaf3ff;border-radius:12px}.app{padding-bottom:calc(120px + env(safe-area-inset-bottom))}}
+@media(min-width:700px){.bottom{left:50%;right:auto;width:760px;transform:translateX(-50%);border-radius:18px 18px 0 0}.fab{right:calc(50% - 340px)}}
 
 .wrap-actions{flex-wrap:wrap}.backup-status{background:#f8fbff}.report-sheet{max-height:92vh;overflow:auto}.report-modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.report-modal-head h2{margin:0}.report-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}.report-table th,.report-table td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}.report-table th{background:#eaf1f8}.report-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.report-summary .card{padding:10px}.report-print-title{margin-bottom:6px}.report-print-note{color:var(--muted);font-size:12px}
 @media print{body *{visibility:hidden!important}#reportPreviewContent,#reportPreviewContent *{visibility:visible!important}#reportPreviewContent{position:absolute;left:0;top:0;width:100%;padding:12px;color:#172235;background:white}#reportModal .actions,#reportModal .report-modal-head{display:none!important}.report-table th{background:#eee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
@@ -89,6 +92,13 @@ input,select,textarea{width:100%;background:#ffffff;border:1px solid var(--borde
 <div class="actions"><button class="btn secondary" onclick="closeTask()">Vazgeç</button><button class="btn primary" onclick="saveTask()">Kaydet</button></div>
 </div></div>
 <div class="modal" id="reportModal"><div class="sheet report-sheet"><div class="report-modal-head"><h2>Rapor Ön İzleme</h2><button class="iconbtn" onclick="closeReportPreview()">✕</button></div><div id="reportPreviewContent"></div><div class="actions"><button class="btn secondary" onclick="closeReportPreview()">Kapat</button><button class="btn primary" onclick="printReport()">Yazdır / PDF Kaydet</button></div></div></div>
+
+<div class="modal" id="summaryModal"><div class="sheet summary-sheet">
+  <div class="report-modal-head"><h2>İş Özeti</h2><button class="iconbtn" onclick="closeSummary()">✕</button></div>
+  <div id="summaryContent" class="summary-content"></div>
+  <div class="actions"><button class="btn secondary" onclick="closeSummary()">Kapat</button><button class="btn primary" onclick="downloadSummaryPDF()">PDF İndir</button></div>
+</div></div>
+<div id="summaryPrint" style="display:none"></div>
 <div class="toast" id="toast"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
@@ -97,11 +107,41 @@ const SUPABASE_ANON_KEY="PASTE_SUPABASE_PUBLISHABLE_KEY_HERE";
 const sb=(SUPABASE_URL.startsWith("http")&&SUPABASE_ANON_KEY.startsWith("sb_"))?window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY):null;
 const REMOTE_TABLE="tasks";
 const KEY='chn_srpr_tasks_v1';
-let tasks=JSON.parse(localStorage.getItem(KEY)||'[]');
+// Önce mevcut localStorage kayıtlarını oku; büyük kayıtlar için IndexedDB yedek depolama kullanılır.
+let tasks=[];
+try { const legacy=localStorage.getItem(KEY); tasks=legacy?JSON.parse(legacy):[]; if(!Array.isArray(tasks))tasks=[]; } catch(e) { console.warn('Eski yerel kayıt okunamadı',e); }
 let syncBusy=false;
 const $=id=>document.getElementById(id);
 const pad=n=>String(n).padStart(2,'0');
-function saveLocal(){localStorage.setItem(KEY,JSON.stringify(tasks));try{const snap={savedAt:new Date().toISOString(),tasks:tasks};localStorage.setItem('chn_srpr_auto_backup_v1',JSON.stringify(snap));localStorage.setItem('chn_srpr_auto_backup_time',snap.savedAt);if($('backupStatus'))$('backupStatus').textContent='Son yerel yedek: '+new Date(snap.savedAt).toLocaleString('tr-TR')+' · '+tasks.length+' iş';}catch(e){console.warn('Yerel yedek oluşturulamadı',e)}}
+let idb=null, idbReady=null;
+function openTaskDB(){
+  if(idbReady)return idbReady;
+  idbReady=new Promise((resolve,reject)=>{
+    if(!('indexedDB' in window)){reject(new Error('Bu tarayıcı IndexedDB desteklemiyor'));return;}
+    const req=indexedDB.open('chn_srpr_storage_v1',1);
+    req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains('records'))db.createObjectStore('records');};
+    req.onsuccess=()=>{idb=req.result;resolve(idb);};
+    req.onerror=()=>reject(req.error||new Error('Yerel veritabanı açılamadı'));
+  });
+  return idbReady;
+}
+async function idbGet(key){const db=await openTaskDB();return new Promise((resolve,reject)=>{const r=db.transaction('records','readonly').objectStore('records').get(key);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+async function idbSet(key,value){const db=await openTaskDB();return new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite');tx.objectStore('records').put(value,key);tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error||new Error('Yerel kayıt tamamlanamadı'));tx.onabort=()=>reject(tx.error||new Error('Yerel kayıt iptal edildi'));});}
+function saveLocal(){
+  const snapshot=JSON.stringify(tasks);
+  // IndexedDB has substantially more capacity than localStorage; it is the reliable primary store.
+  idbSet('tasks',tasks).then(()=>{
+    if($('backupStatus'))$('backupStatus').textContent='Yerel kayıt güvenli şekilde kaydedildi · '+tasks.length+' iş';
+  }).catch(e=>{console.error('IndexedDB kayıt hatası',e);toast('Yerel kayıt yapılamadı: '+(e.message||e));});
+  // Keep compatibility with older versions, but never let a quota error block saving.
+  try { localStorage.setItem(KEY,snapshot); }
+  catch(e){
+    try { localStorage.removeItem('chn_srpr_auto_backup_v1'); localStorage.removeItem('chn_srpr_auto_backup_time'); localStorage.setItem(KEY,snapshot); }
+    catch(e2){console.warn('LocalStorage dolu; kayıt IndexedDB üzerinden sürdürülüyor.',e2);}
+  }
+  try { const snap={savedAt:new Date().toISOString(),tasks:tasks}; idbSet('auto_backup',snap).catch(e=>console.warn('IndexedDB yedek oluşturulamadı',e)); }
+  catch(e){console.warn('Yedek oluşturulamadı',e)}
+}
 function save(){saveLocal();render();}
 function fmtDate(s){if(!s)return '-';let [y,m,d]=s.split('-');return `${d}.${m}.${y}`}
 function now(){return new Date()}
@@ -111,7 +151,7 @@ function isUpcoming(t){let d=dueDate(t)-now();return t.status!=='Tamamlandı'&&d
 function esc(s){return (s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function taskHTML(t){
 let p=t.priority==='Yüksek'?'p1':t.priority==='Orta'?'p2':'p3';
-return `<div class="task ${t.status==='Tamamlandı'?'done':''}"><div class="taskrow"><div><div class="task-title-row"><span class="task-state-icon ${t.status==='Tamamlandı'?'completed':'pending'}" aria-label="${t.status==='Tamamlandı'?'Tamamlandı':'Tamamlanmadı'}">${t.status==='Tamamlandı'?'✓':'○'}</span><h3>${esc(t.title)}</h3></div><div class="meta">${esc(t.project||'Genel')} · ${fmtDate(t.date)} ${t.time||''}</div></div><span class="pill ${p}">${esc(t.priority)}</span></div><div class="meta" style="margin-top:7px">${esc(t.note||'')}<br>Termin: ${fmtDate(t.deadline)} ${t.deadlineTime||''}</div><div class="actions"><button class="btn secondary" onclick="toggleDone('${t.id}')">${t.status==='Tamamlandı'?'↩ Aç':'✓ Tamamla'}</button><button class="btn secondary" onclick="editTask('${t.id}')">Düzenle</button><button class="btn danger" onclick="deleteTask('${t.id}')">Sil</button></div></div>`}
+return `<div class="task ${t.status==='Tamamlandı'?'done':''}" role="button" tabindex="0" aria-label="İş özetini aç: ${esc(t.title)}" onclick="openSummary('${t.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSummary('${t.id}')}"><div class="taskrow"><div><div class="task-title-row"><span class="task-state-icon ${t.status==='Tamamlandı'?'completed':'pending'}" aria-label="${t.status==='Tamamlandı'?'Tamamlandı':'Tamamlanmadı'}">${t.status==='Tamamlandı'?'✓':'○'}</span><h3>${esc(t.title)}</h3></div><div class="meta">${esc(t.project||'Genel')} · ${fmtDate(t.date)} ${t.time||''}</div></div><span class="pill ${p}">${esc(t.priority)}</span></div><div class="meta" style="margin-top:7px">${esc(t.note||'')}<br>Termin: ${fmtDate(t.deadline)} ${t.deadlineTime||''}</div><div class="actions"><button class="btn secondary" onclick="event.stopPropagation();toggleDone('${t.id}')">${t.status==='Tamamlandı'?'↩ Aç':'✓ Tamamla'}</button><button class="btn secondary" onclick="event.stopPropagation();editTask('${t.id}')">Düzenle</button><button class="btn danger" onclick="event.stopPropagation();deleteTask('${t.id}')">Sil</button></div></div>`}
 let homeRange='all';
 function dateOnly(d){return new Date(d.getFullYear(),d.getMonth(),d.getDate())}
 function setHomeRange(r){homeRange=r;render()}
@@ -132,7 +172,30 @@ function fromRemote(r){return {id:r.id,title:r.title||'',project:r.project||'',d
 async function pullRemote(){if(!sb){return false}if(syncBusy)return false;syncBusy=true;try{const {data,error}=await sb.from(REMOTE_TABLE).select('*').order('date',{ascending:true});if(error)throw error;const remoteTasks=(data||[]).map(fromRemote);if(remoteTasks.length){tasks=remoteTasks;saveLocal();render()}return true}catch(e){console.error('Supabase okuma hatası',e);toast('Supabase okuma hatası: '+(e.message||e));return false}finally{syncBusy=false}}
 async function pushRemote(t){if(!sb)return true;const row=toRemote(t);const {error}=await sb.from(REMOTE_TABLE).upsert(row,{onConflict:'id'});if(error){console.error(error);toast('Sunucuya kaydedilemedi: '+error.message);return false}return true}
 async function deleteRemote(id){if(!sb)return true;const {error}=await sb.from(REMOTE_TABLE).delete().eq('id',id);if(error){console.error(error);toast('Sunucudan silinemedi: '+error.message);return false}return true}
-async function saveTask(){let title=$('title').value.trim(),date=$('date').value;if(!title||!date){toast('İş başlığı ve tarih zorunlu.');return}let id=$('editId').value;let deadline=$('deadline').value;if(!deadline){toast('Termin tarihi zorunlu.');return}if(new Date(deadline)<new Date(date)){toast('Termin tarihi iş tarihinden önce olamaz.');return}let obj={id:id||crypto.randomUUID(),title,project:$('project').value.trim(),date,time:$('time').value,deadline,deadlineTime:$('deadlineTime').value,priority:$('priority').value,status:$('status').value,note:$('note').value.trim(),updatedAt:new Date().toISOString()};if(id)tasks=tasks.map(t=>t.id===id?obj:t);else tasks.push(obj);save();closeTask();let ok=await pushRemote(obj);toast(ok?'İş kaydedildi.':'İş cihazda kaydedildi; sunucuya aktarılamadı.');if(ok)await pullRemote()}
+async function saveTask(){
+  try {
+    const title=$('title').value.trim();
+    const date=$('date').value;
+    if(!title||!date){toast('İş başlığı ve tarih zorunlu.');return;}
+    const id=$('editId').value;
+    const deadline=$('deadline').value;
+    if(!deadline){toast('Termin tarihi zorunlu.');return;}
+    if(new Date(deadline+'T00:00:00')<new Date(date+'T00:00:00')){toast('Termin tarihi iş tarihinden önce olamaz.');return;}
+    const makeId=()=>window.crypto&&crypto.randomUUID?crypto.randomUUID():('task-'+Date.now()+'-'+Math.random().toString(36).slice(2,10));
+    const obj={id:id||makeId(),title,project:$('project').value.trim(),date,time:$('time').value,deadline,deadlineTime:$('deadlineTime').value,priority:$('priority').value,status:$('status').value,note:$('note').value.trim(),updatedAt:new Date().toISOString()};
+    if(id) tasks=tasks.map(t=>String(t.id)===String(id)?obj:t); else tasks.push(obj);
+    saveLocal();
+    render();
+    closeTask();
+    let remoteOk=true;
+    if(sb) remoteOk=await pushRemote(obj);
+    toast(remoteOk?'İş kaydedildi.':'İş cihazda kaydedildi; sunucuya aktarılamadı.');
+    if(sb&&remoteOk) await pullRemote();
+  } catch(err) {
+    console.error('Kaydetme hatası:',err);
+    toast('Kaydetme hatası: '+(err&&err.message?err.message:'Bilinmeyen hata'));
+  }
+}
 function editTask(id){openTask(id)}
 async function deleteTask(id){if(!confirm('Bu işi silmek istediğine emin misin?'))return;tasks=tasks.filter(t=>t.id!==id);save();let ok=await deleteRemote(id);toast(ok?'İş silindi.':'İş cihazdan silindi; sunucudan silinemedi.');if(ok)await pullRemote()}
 async function toggleDone(id){let t=tasks.find(x=>x.id===id);if(!t)return;t={...t,status:t.status==='Tamamlandı'?'Bekliyor':'Tamamlandı',updatedAt:new Date().toISOString()};tasks=tasks.map(x=>x.id===id?t:x);save();let ok=await pushRemote(t);if(ok)await pullRemote()}
@@ -141,16 +204,55 @@ async function requestNotifications(){if(!('Notification'in window)){toast('Bu c
 function checkNotifications(){if(!('Notification'in window)||Notification.permission!=='granted')return;let todayKey=new Date().toISOString().slice(0,10);let sent=JSON.parse(localStorage.getItem('chn_sent')||'{}');tasks.filter(t=>t.status!=='Tamamlandı'&&isUpcoming(t)).forEach(t=>{let key=t.id+'_'+todayKey;if(!sent[key]&&dueDate(t)-now()<24*3600000){new Notification('Yaklaşan iş: '+t.title,{body:`Termin: ${fmtDate(t.deadline||t.date)} ${t.deadlineTime||t.time||''}${t.project?' · '+t.project:''}`});sent[key]=1}});localStorage.setItem('chn_sent',JSON.stringify(sent))}
 function downloadJson(data,name){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
 function exportData(){const pack={app:'Chn SRPR İş Takip & Raporlama',version:1,backupType:'manual',savedAt:new Date().toISOString(),tasks:tasks};downloadJson(pack,'chn-srpr-yedek-'+new Date().toISOString().slice(0,10)+'.json');toast('Yedek indirme işlemi başlatıldı.')}
-function downloadBackupHistory(){let raw=localStorage.getItem('chn_srpr_auto_backup_v1');if(!raw){saveLocal();raw=localStorage.getItem('chn_srpr_auto_backup_v1')}if(!raw){toast('Bu cihazda otomatik yedek bulunamadı.');return}let pack=JSON.parse(raw);pack.app='Chn SRPR İş Takip & Raporlama';pack.backupType='automatic-local';downloadJson(pack,'chn-srpr-otomatik-yedek-'+new Date().toISOString().slice(0,10)+'.json');toast('Otomatik yedek indiriliyor.')}
+async function downloadBackupHistory(){try{let pack=await idbGet('auto_backup');if(!pack){pack={savedAt:new Date().toISOString(),tasks:tasks};}pack.app='Chn SRPR İş Takip & Raporlama';pack.backupType='automatic-local';downloadJson(pack,'chn-srpr-otomatik-yedek-'+new Date().toISOString().slice(0,10)+'.json');toast('Otomatik yedek indiriliyor.')}catch(e){const raw=localStorage.getItem('chn_srpr_auto_backup_v1');if(raw){const pack=JSON.parse(raw);pack.app='Chn SRPR İş Takip & Raporlama';pack.backupType='automatic-local';downloadJson(pack,'chn-srpr-otomatik-yedek-'+new Date().toISOString().slice(0,10)+'.json');toast('Otomatik yedek indiriliyor.')}else toast('Otomatik yedek okunamadı. Normal yedek indir bölümünü kullanabilirsin.')}}
 function previewReport(){render();let done=tasks.filter(t=>t.status==='Tamamlandı').length,late=tasks.filter(isOverdue),open=tasks.filter(t=>t.status!=='Tamamlandı');let pct=tasks.length?Math.round(done/tasks.length*100):0;let rows=tasks.slice().sort((a,b)=>dueDate(a)-dueDate(b)).map(t=>`<tr><td>${esc(t.title||'')}</td><td>${esc(t.project||'Genel')}</td><td>${fmtDate(t.date)}</td><td>${fmtDate(t.deadline||t.date)} ${esc(t.deadlineTime||'')}</td><td>${esc(t.status||'Bekliyor')}</td><td>${esc(t.priority||'Orta')}</td></tr>`).join('');$('reportPreviewContent').innerHTML=`<h2 class="report-print-title">Chn SRPR — İş Takip Raporu</h2><div class="report-print-note">Rapor tarihi: ${new Date().toLocaleString('tr-TR')}</div><div class="report-summary"><div class="card"><b>${tasks.length}</b><div class="meta">Toplam iş</div></div><div class="card"><b>${done}</b><div class="meta">Tamamlanan</div></div><div class="card"><b>${late.length}</b><div class="meta">Geciken</div></div></div><p>Bekleyen / devam eden iş: <b>${open.length}</b> · Tamamlanma oranı: <b>${pct}%</b></p><table class="report-table"><thead><tr><th>İş</th><th>Proje</th><th>İş tarihi</th><th>Termin</th><th>Durum</th><th>Öncelik</th></tr></thead><tbody>${rows||'<tr><td colspan="6">Henüz kayıtlı iş bulunmuyor.</td></tr>'}</tbody></table>`;$('reportModal').classList.add('show')}
 function closeReportPreview(){$('reportModal').classList.remove('show')}function printReport(){window.print()}
+
+
+let activeSummaryTask = null;
+function openSummary(id){
+  const t=tasks.find(x=>String(x.id)===String(id));
+  if(!t){toast('İş kaydı bulunamadı.');return;}
+  activeSummaryTask=t;
+  // İş özeti istenen sabit yerleşimde gösterilir; PDF'de iki sütunlu düzen kullanılır.
+  const fields=[
+    ['İş Konusu',t.title||'Belirtilmedi'],
+    ['Site Adı',t.project||'Belirtilmedi'],
+    ['İş Tarihi',fmtDate(t.date)],
+    ['Termin Tarihi',fmtDate(t.deadline||t.date)],
+    ['Öncelik',t.priority||'Orta'],
+    ['Durum',t.status||'Bekliyor'],
+    ['Not / Açıklama',t.note||'Not girilmemiş']
+  ];
+  const pairFields=fields.slice(0,6);
+  $('summaryContent').innerHTML='<div class="summary-pair-grid">'+pairFields.map(([label,value])=>`<div class="summary-pair"><span class="summary-label">${label} :</span><div class="summary-value">${esc(String(value??'-'))}</div></div>`).join('')+'</div>'+`<div class="summary-note"><span class="summary-label">Not / Açıklama :</span><div class="summary-value">${esc(String(fields[6][1]??'-'))}</div></div>`;
+  const pdfRows=[
+    `<div class="pdfrow"><div class="pdf-label">İş Konusu</div><div class="pdf-value">${esc(String(fields[0][1]??'-'))}</div></div>`,
+    `<div class="pdfrow"><div class="pdf-label">Site Adı</div><div class="pdf-value">${esc(String(fields[1][1]??'-'))}</div></div>`,
+    `<div class="pdfrow"><div class="pdf-label">İş Tarihi</div><div class="pdf-value">${esc(String(fields[2][1]??'-'))}</div></div>`,
+    `<div class="pdfrow"><div class="pdf-label">Termin Tarihi</div><div class="pdf-value">${esc(String(fields[3][1]??'-'))}</div></div>`,
+    `<div class="pdfrow"><div class="pdf-label">Öncelik</div><div class="pdf-value">${esc(String(fields[4][1]??'-'))}</div></div>`,
+    `<div class="pdfrow"><div class="pdf-label">Durum</div><div class="pdf-value">${esc(String(fields[5][1]??'-'))}</div></div>`,
+    `<div class="pdfrow full"><div class="pdf-label">Not / Açıklama</div><div class="pdf-value">${esc(String(fields[6][1]??'-'))}</div></div>`
+  ];
+  $('summaryPrint').innerHTML='<h1>CHN SRPR — İŞ ÖZETİ</h1><div class="pdfgrid">'+pdfRows.join('')+'</div>';
+  $('summaryModal').classList.add('show');
+}
+function closeSummary(){$('summaryModal').classList.remove('show');}
+function downloadSummaryPDF(){
+  if(!activeSummaryTask){toast('Önce bir iş seçmelisin.');return;}
+  // Native print dialog lets the user save as PDF on desktop/iOS. Open from direct click for popup-blocker compatibility.
+  window.print();
+  toast('Yazdırma penceresinden PDF olarak kaydedebilirsin.');
+}
 
 $('importFile').addEventListener('change',async e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=async()=>{try{let d=JSON.parse(r.result);let restored=Array.isArray(d)?d:d&&Array.isArray(d.tasks)?d.tasks:null;if(!restored)throw 0;if(!confirm('Yedekteki '+restored.length+' iş mevcut kayıtların yerine yüklenecek. Devam edilsin mi?'))return;tasks=restored;save();if(sb){for(const t of tasks)await pushRemote(t);await pullRemote()}toast('Yedek geri yüklendi.')}catch{toast('Geçersiz JSON dosyası.')}};r.readAsText(f)})
 async function clearAll(){if(!confirm('TÜM işler silinecek. Emin misin?'))return;let ids=tasks.map(t=>t.id);tasks=[];save();if(sb){for(const id of ids)await deleteRemote(id);await pullRemote()}toast('Tüm işler silindi.')}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$(b.dataset.screen).classList.add('active');render()});
 $('search').oninput=render;$('filterStatus').onchange=render;$('filterPriority').onchange=render;$('notifyBtn').onclick=requestNotifications;
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
-render();saveLocal();checkNotifications();if($('backupStatus')){const bt=localStorage.getItem('chn_srpr_auto_backup_time');$('backupStatus').textContent=bt?'Son yerel yedek: '+new Date(bt).toLocaleString('tr-TR')+' · '+tasks.length+' iş':'Yerel otomatik yedekleme etkin; kayıtlar değiştikçe ve 5 dakikada bir güncellenir.';}setInterval(()=>{try{saveLocal()}catch(e){}},300000);
+// Açılışta IndexedDB kayıtları varsa onları kullan; yoksa mevcut localStorage kayıtlarını taşı.
+(async()=>{try{const stored=await idbGet('tasks');if(Array.isArray(stored)){tasks=stored;}else{await idbSet('tasks',tasks);}render();saveLocal();const backup=await idbGet('auto_backup');if($('backupStatus'))$('backupStatus').textContent=backup&&backup.savedAt?'Son yerel yedek: '+new Date(backup.savedAt).toLocaleString('tr-TR')+' · '+tasks.length+' iş':'Yerel kayıt güvenli depolamada etkin · '+tasks.length+' iş';}catch(e){console.warn('Yerel veritabanı başlatılamadı',e);render();toast('Güvenli yerel depolama açılamadı. Lütfen yedek indirip tarayıcı izinlerini kontrol et.');}})();checkNotifications();setInterval(()=>{saveLocal()},300000);
 if(sb){window.addEventListener('load',()=>setTimeout(pullRemote,300));setInterval(pullRemote,60000)}
 </script>
 </body></html>
